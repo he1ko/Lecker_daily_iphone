@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AppStatus" representedClassName="AppStatus" syncable="YES">
+        <attribute name="facetLoaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="keyLoaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="FacetExpr" representedClassName="FacetExpr" syncable="YES">
+        <attribute name="f_id" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="facetgroup" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FacetGroup" inverseName="facetexpr" inverseEntity="FacetGroup" syncable="YES"/>
+    </entity>
+    <entity name="FacetGroup" representedClassName="FacetGroup" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="facetexpr" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FacetExpr" inverseName="facetgroup" inverseEntity="FacetExpr" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES">
+        <attribute name="carbs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentId" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="fat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="ingredients" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kcal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prepSteps" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prepTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="protein" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Security" representedClassName="Security" syncable="YES">
+        <attribute name="clientid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ShoppingCard" representedClassName="ShoppingCard" syncable="YES">
+        <attribute name="ingredients" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Decimal" defaultValueString="1" syncable="YES"/>
+    </entity>
+    <fetchRequest name="FetchAllFacet" entity="FacetExpr"/>
+    <fetchRequest name="FetchAppStatus" entity="AppStatus"/>
+    <fetchRequest name="FetchFacetGroups" entity="FacetGroup"/>
+    <fetchRequest name="FetchSecurityInformation" entity="Security"/>
+    <fetchRequest name="FetchShoppingCard" entity="ShoppingCard"/>
+    <elements>
+        <element name="AppStatus" positionX="90" positionY="-27" width="128" height="75"/>
+        <element name="FacetExpr" positionX="225" positionY="-207" width="128" height="105"/>
+        <element name="FacetGroup" positionX="7" positionY="-207" width="128" height="75"/>
+        <element name="Recipe" positionX="-209" positionY="-225" width="128" height="193"/>
+        <element name="Security" positionX="90" positionY="57" width="128" height="60"/>
+        <element name="ShoppingCard" positionX="90" positionY="126" width="128" height="75"/>
+    </elements>
+</model>
